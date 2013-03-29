@@ -14,8 +14,8 @@ bindkey -e
 
 # Command history
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=100000
+HISTSIZE=100000
+SAVEHIST=1000000
 setopt autocd
 
 # Directory history
@@ -56,4 +56,4 @@ function myenv () {
 lprompt ""
 rprompt ""
 
-/opt/imedodev/current/bash/environment/development.sh
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

@@ -16,15 +16,11 @@ alias  grepps="ps aux | grep"
 alias gitconf="mate .git/config"
 alias  gitmod="mate .gitmodules"
 alias      tf="tail -f "
-alias   mysql='mysql5'
-alias tiny_ci="open -a 'Google Chrome' http://192.168.82.134:7199/"
-alias      vi='vi -p'
+#alias   mysql='mysql5'
+alias  canary="open -a 'Google Chrome Canary'"
 alias   nrake='NONET=true rake'
 alias    rmrf='rm -rf'
 alias     bll='vi $HOME/.bash_login_local'
-alias    whid='mate $HOME/what_have_i_done.txt'
-alias      ip='ifconfig | grep "broadcast" | cut -b7-20'
 alias       z='mate $HOME/.zsh'
 alias      zr='source $HOME/.zshrc'
 alias      dh='dirs -v'
-alias      guardian= lynx http://ww.guardian.co.uk
