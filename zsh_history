@@ -1,0 +1,4 @@
+: 1316781975:3;git clone git@github.com:loosi/zed-shell.git .zsh
+: 1316781993:0;ln -s .zsh/zshrc.zsh .zshrc
+: 1316782002:0;rm .zshrc
+: 1316782005:0;ln -s .zsh/zshrc.zsh .zshrc

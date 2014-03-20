@@ -14,17 +14,13 @@ bindkey -e
 
 # Command history
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=100000
+HISTSIZE=100000
+SAVEHIST=1000000
 setopt autocd
 
 # Directory history
 DIRSTACKSIZE=10
 setopt autopushd pushdminus pushdsilent pushdtohome
-
-function stage {
-  cap staging deploy --set branch=$1 --set rebase_to=$1
-}
 
 function precmd {
       vcs_info 'prompt'
@@ -43,11 +39,6 @@ function rprompt {
     RPROMPT="${TIME}${GIT}${CURRENT_DEV_ENV}"
 }
 
-function imedoenv () {
-  cat ~/.zsh/envs/imedo_env.zsh > ~/.zsh/envs/dev_env.zsh
-  source $HOME/.zshrc
-}
-
 function myenv () {
   cat ~/.zsh/envs/my_env.zsh > ~/.zsh/envs/dev_env.zsh
   source $HOME/.zshrc
@@ -55,5 +46,5 @@ function myenv () {
 
 lprompt ""
 rprompt ""
-
-/opt/imedodev/current/bash/environment/development.sh
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
