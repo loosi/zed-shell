@@ -19,3 +19,24 @@ zstyle ':vcs_info:*:prompt:*' stagedstr '²'    # display ² if there are staged
 zstyle ':vcs_info:*:prompt:*' actionformats " (${FMT_BRANCH}-${FMT_ACTION})" #"${FMT_PATH}"
 zstyle ':vcs_info:*:prompt:*' formats       " (${FMT_BRANCH})"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                             "%~"
+
+
+function lprompt {
+     PROMPT_SYMBOL="${PR_WHITE} $ ${PR_RESET}"
+     PROMPT="%n@%m:%b %~%B%{%}${PROMPT_SYMBOL}%b"
+		 #PROMPT="%b %~%B%b"
+}
+ 
+function precmd {
+       vcs_info 'prompt'
+}
+  
+function rprompt {
+     TIME="[${PR_MAGENTA}%T${PR_RESET}]"
+     local git='$vcs_info_msg_0_'
+     GIT="${git}"
+     RPROMPT="${TIME}${GIT}"
+}
+ 
+rprompt ""
+lprompt ""
